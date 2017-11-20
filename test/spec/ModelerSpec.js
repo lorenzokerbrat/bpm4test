@@ -10,7 +10,7 @@ var fs = require('fs');
 var Modeler = require('bpmn-js/lib/Modeler');
 
 
-describe('modeler / nyan version', function() {
+describe('modeler / bpm4test version', function() {
 
   var diagram = fs.readFileSync(__dirname + '/diagram.bpmn', 'utf-8');
 
@@ -50,114 +50,65 @@ describe('modeler / nyan version', function() {
 
   });
 
-
-  describe('custom rules (resize all)', function() {
-
-    var customRulesModule = require('../../lib/resize-all-rules');
-
-    function inject(fn) {
-
-      var config = {
-        additionalModules: [ customRulesModule ]
-      };
-
-      return withModeler(config, fn);
-    }
-
-
-    it('should allow to resize all elements', inject(function() {
-
-    }));
-
-  });
-
-
-  describe('custom colors', function() {
-
-    var colorPickerModule = require('../../lib/color-picker');
-
-    function inject(fn) {
-
-      var config = {
-        additionalModules: [ colorPickerModule ]
-      };
-
-      return withModeler(config, fn);
-    }
-
-
-    it('should allow to resize all elements', inject(function() {
-
-    }));
-
-  });
-
-
-  describe('draw', function() {
-
-    var nyanDrawModule = require('../../lib/nyan/draw');
-
-    function inject(fn) {
-
-      var config = {
-        additionalModules: [ nyanDrawModule ]
-      };
-
-      return withModeler(config, fn);
-    }
-
-
-    it('should render cat', inject(function() {
-
-    }));
-
-  });
-
-
+  // Changements sur la Palette principale
   describe('palette', function() {
 
-    var nyanPaletteModule = require('../../lib/nyan/palette');
+    var paletteChangesModule = require('../../lib/features/palette');
 
     function inject(fn) {
 
       var config = {
-        additionalModules: [ nyanPaletteModule ]
+        additionalModules: [ paletteChangesModule ]
       };
 
       return withModeler(config, fn);
     }
 
-
-    it('should create cat from palette', inject(function() {
+    it('should apply changes to the palette', inject(function() {
 
     }));
 
   });
 
+  // Changements sur les Menus Pop-up
+  describe('popup-menu', function() {
 
+    var replaceMenuModule = require('../../lib/features/popup-menu');
+
+    function inject(fn) {
+
+      var config = {
+        additionalModules: [ replaceMenuModule ]
+      };
+
+      return withModeler(config, fn);
+    }
+
+    it('should apply changes to pop-up menus', inject(function() {
+
+    }));
+
+  });
+
+  // Combinaison
   describe.only('combined', function() {
 
-    var nyanPaletteModule = require('../../lib/nyan/palette');
-    var nyanDrawModule = require('../../lib/nyan/draw');
-    var colorPickerModule = require('../../lib/color-picker');
-    var resizeAllModule = require('../../lib/resize-all-rules');
+    var paletteChangesModule = require('../../lib/features/palette');
+    // var replaceMenuModule = require('../../lib/features/popup-menu');
 
     function inject(fn) {
 
       var config = {
         additionalModules: [
-          nyanPaletteModule,
-          nyanDrawModule,
-          colorPickerModule,
-          resizeAllModule
+          paletteChangesModule,
+          // replaceMenuModule
         ]
       };
 
       return withModeler(config, fn);
     }
 
-
-    it('should create cat from palette', inject(function() {
+    it('should change bpmn modeler', inject(function() {
 
     }));
 
