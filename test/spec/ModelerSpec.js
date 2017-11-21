@@ -53,12 +53,12 @@ describe('modeler / bpm4test version', function() {
   // Changements sur la Palette principale
   describe('palette', function() {
 
-    var paletteChangesModule = require('../../lib/features/palette');
+    var paletteModule = require('../../lib/features/palette');
 
     function inject(fn) {
 
       var config = {
-        additionalModules: [ paletteChangesModule ]
+        additionalModules: [ paletteModule ]
       };
 
       return withModeler(config, fn);
@@ -90,18 +90,40 @@ describe('modeler / bpm4test version', function() {
 
   });
 
+  // Changements sur le Context Pad
+  describe('context-pad', function() {
+
+    var contextPadModule = require('../../lib/features/context-pad');
+
+    function inject(fn) {
+
+      var config = {
+        additionalModules: [ contextPadModule ]
+      };
+
+      return withModeler(config, fn);
+    }
+
+    it('should apply changes to context-pad', inject(function() {
+
+    }));
+
+  });
+
   // Combinaison
   describe.only('combined', function() {
 
-    var paletteChangesModule = require('../../lib/features/palette');
-    // var replaceMenuModule = require('../../lib/features/popup-menu');
+    var paletteModule = require('../../lib/features/palette');
+    var replaceMenuModule = require('../../lib/features/popup-menu');
+    var contextPadModule = require('../../lib/features/context-pad');
 
     function inject(fn) {
 
       var config = {
         additionalModules: [
-          paletteChangesModule,
-          // replaceMenuModule
+          paletteModule,
+          replaceMenuModule,
+          contextPadModule
         ]
       };
 
