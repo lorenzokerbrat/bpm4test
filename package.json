@@ -1,31 +1,32 @@
 {
   "name": "bpm4test",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "karma start test/config/karma.unit.js",
-    "test:watch": "karma start test/config/karma.unit.js --auto-watch --no-single-run"
+  "description": "A simplified bpmn-js modeler for model-based testing",
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lorenzokerbrat/bpm4test"
   },
+  "keywords": [
+    "bpmnjs",
+    "bpm4test"
+  ],
   "author": "",
   "license": "",
   "devDependencies": {
     "brfs": "^1.4.1",
-    "browserify": "^13.0.0",
-    "chai": "^3.2.0",
-    "karma": "^0.13.9",
-    "karma-browserify": "^5.0.0",
-    "karma-chai": "^0.1.0",
-    "karma-cli": "^0.1.0",
-    "karma-mocha": "^0.2.0",
-    "karma-phantomjs-launcher": "^0.2.1",
-    "mocha": "^2.3.2",
-    "phantomjs": "^1.9.18",
-    "watchify": "^3.8.0"
+    "grunt": "~1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt-contrib-connect": "~1.0.2",
+    "grunt-contrib-jshint": "~1.0.0",
+    "grunt-contrib-copy": "~1.0.0",
+    "load-grunt-tasks": "~3.5.0"
   },
   "dependencies": {
     "bpmn-js": "^0.21.0",
     "diagram-js": "^0.20.0",
-    "inherits": "^2.0.1"
+    "inherits": "^2.0.1",
+    "jquery": "^2.1.1"
   }
 }
