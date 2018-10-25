@@ -1,11 +1,11 @@
 {
-  "name": "bpm4test",
+  "name": "bpm4test-bpmn.io-modeler",
   "version": "1.0.0",
   "description": "A simplified bpmn-js modeler for model-based testing",
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lorenzokerbrat/bpm4test"
+    "url": "https://github.com/lorenzokerbrat/bpm4test-bpmn.io-modeler"
   },
   "keywords": [
     "bpmnjs",
@@ -15,12 +15,12 @@
   "license": "",
   "devDependencies": {
     "brfs": "^1.4.1",
-    "grunt": "~1.0.1",
+    "grunt": "^1.0.3",
     "grunt-browserify": "^5.0.0",
-    "grunt-contrib-watch": "~1.0.0",
     "grunt-contrib-connect": "~1.0.2",
-    "grunt-contrib-jshint": "~1.0.0",
     "grunt-contrib-copy": "~1.0.0",
+    "grunt-contrib-jshint": "~1.0.0",
+    "grunt-contrib-watch": "~1.0.0",
     "load-grunt-tasks": "~3.5.0"
   },
   "dependencies": {

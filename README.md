@@ -1,11 +1,11 @@
-# bpm4test
+# bpm4test-bpmn.io-modeler
 
-[bpm4test](https://github.com/lorenzokerbrat/bpm4test) implements a simplified version of [bpmn-js](https://github.com/bpmn-io/bpmn-js)'s modeler to make BPMN 2.0 process diagrams for model-based testing purposes.
+[bpm4test-bpmn.io-modeler](https://github.com/lorenzokerbrat/bpm4test-bpmn.io-modeler) implements a simplified version of [bpmn-js](https://github.com/bpmn-io/bpmn-js)'s modeler to make BPMN 2.0 process diagrams for model-based testing purposes.
 
 
 ## List of changes from bpmn-js
 
-Elements have been removed from the modeler for simplicity. Only the following elements are still present in bpm4test:
+Elements have been removed from the modeler for simplicity. Only the following elements are still present in bpm4test-bpmn.io-modeler:
 - Start node
 - Task
 - Service Task (sub process)
